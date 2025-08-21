@@ -1,0 +1,38 @@
+db.cars.insertOne({
+    "maker":"Toyota",
+    "model":"XUV500",
+    "fuel type":"Diseal",
+    "transmission":"Automatic",
+    "engine":{
+    "type":"Natural Gas", "cc":1800,"torque": "220 Nm"},
+    "features": [
+        "Airbags", "Touchscreen","Reverse Camera","Bluetooth Connectivity"," Colled Seats"
+    ]
+}
+)
+
+
+
+
+db.cars.insertOne(
+    {
+        "maker": "Tata",
+        "model": "Nexon",
+        "fuel type": "petrol",
+        "transmission": "Automatic",
+        "engine": {
+          "type": "Turbocharged",
+          "cc": 1199,
+          "torque": "170 Nm"
+        },
+        "features": [
+          "Touchscreen",
+          "Reverse Camera",
+          "Bluetooth Connectivity",
+          "Colled Seats"
+        ],
+        "sunroof": false,
+        "airbags": 2,
+        "color": "Blue"
+      }
+)

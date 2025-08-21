@@ -22,14 +22,14 @@ private:
 public:
     void addBook(int id, string title, string author) {
         books.push_back(Book(id, title, author));
-        cout << "Book added successfully!\n";
+        cout << "Book added successfully!"<<endl;
     }
 
     void viewBooks() {
-        cout << "\n--- Library Books ---\n";
+        cout << "\n--- Library Books ---"<<endl;
         for (const auto& book : books) {
             cout << "ID: " << book.id
-                 << ", Title: " << book.title
+                 << ", Title: " << book.title 
                  << ", Author: " << book.author
                  << ", Issued: " << (book.isIssued ? "Yes" : "No");
             if (book.isIssued) {
@@ -43,16 +43,16 @@ public:
         for (auto& book : books) {
             if (book.id == bookId) {
                 if (book.isIssued) {
-                    cout << "Book is already issued to User ID: " << book.issuedToUserId << ".\n";
+                    cout << "Book is already issued to User ID: " << book.issuedToUserId << "."<<endl;
                 } else {
                     book.isIssued = true;
                     book.issuedToUserId = userId;
-                    cout << "Book issued successfully to User ID: " << userId << ".\n";
+                    cout << "Book issued successfully to User ID: " << userId << "."<<endl;
                 }
                 return;
             }
         }
-        cout << "Book not found.\n";
+        cout << "Book not found."<<endl;
     }
 
     void returnBook(int bookId, int userId) {
@@ -61,16 +61,16 @@ public:
                 if (book.isIssued && book.issuedToUserId == userId) {
                     book.isIssued = false;
                     book.issuedToUserId = -1;
-                    cout << "Book returned successfully by User ID: " << userId << ".\n";
+                    cout << "Book returned successfully by User ID: " << userId << "."<<endl;
                 } else if (book.isIssued) {
-                    cout << "Book is not issued to User ID: " << userId << ".\n";
+                    cout << "Book is not issued to User ID: " << userId << "."<<endl;
                 } else {
                     cout << "Book was not issued.\n";
                 }
                 return;
             }
         }
-        cout << "Book not found.\n";
+        cout << "Book not found."<<endl;
     }
 };
 
@@ -114,10 +114,10 @@ int main() {
                 library.returnBook(id, userId);
                 break;
             case 5:
-                cout << "Exiting system. Goodbye!\n";
+                cout << "Exiting system. Goodbye!"<<endl;
                 return 0;
             default:
-                cout << "Invalid choice. Please try again.\n";
+                cout << "Invalid choice. Please try again."<<endl;
         }
     }
 }
